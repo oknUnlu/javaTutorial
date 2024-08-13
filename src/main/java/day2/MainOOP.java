@@ -1,5 +1,4 @@
 package day2;
-
     // Inheritance
     /* When one object acquires all the properties and behaviors of a parent object, it is known as inheritance.
       It provides code reusability. It is used to achieve runtime polymorphism. */
@@ -16,16 +15,52 @@ package day2;
        For example, a capsule, it is wrapped with different medicines.
        A java class is the example of encapsulation. Java bean is the fully encapsulated class because all the data
        members are private here. */
-    class Student{
-        int id;
-        String name;
-    }
+
     class TestStudent2{
         public static void main(String[] args) {
-            Student s1 = new Student();
+            Product product1 = new Product();
+            product1.setName("Delonghi Kahve Makinesi");
+            product1.setUnitPrice(7500);
+            product1.setDiscount(7);
+            product1.setUnitsInStock(3);
+            product1.setImageUrl("1.jpg");
 
-            s1.id = 1;
-            s1.name = "AAAaaa";
-            System.out.println(s1.id + s1.name);
+            Product product2 = new Product();
+            product2.setName("Smeg Kahve Makinesi");
+            product2.setUnitPrice(6500);
+            product2.setDiscount(8);
+            product2.setUnitsInStock(5);
+            product2.setImageUrl("2.jpg");
+
+            Product product3 = new Product();
+            product3.setName("Kitchen Kahve Makinesi");
+            product3.setUnitPrice(4500);
+            product3.setDiscount(6);
+            product3.setUnitsInStock(2);
+            product3.setImageUrl("3.jpg");
+
+            Product[] products = { product1, product2, product3 };
+
+            System.out.println("<ul>");
+            for (Product product : products) {
+                System.out.println("<li>" + product.getName() + "</li>");
+            }
+            System.out.println("</ul>");
+
+            IndividualCustomer individualCustomer = new IndividualCustomer();
+            individualCustomer.setId(1);
+            individualCustomer.setPhone("123456789");
+            individualCustomer.setCustomerNumber("1234");
+            individualCustomer.setFirstName("Okan");
+            individualCustomer.setLastName("Ünlü");
+
+            CorporateCustomer corporateCustomer = new CorporateCustomer();
+            corporateCustomer.setId(2);
+            corporateCustomer.setCompanyName("test.company");
+            corporateCustomer.setCustomerNumber("6543");
+            corporateCustomer.setPhone("1111111111");
+            corporateCustomer.setTaxNumber("2222222222");
+
+            Customer[] customers = { individualCustomer, corporateCustomer };
         }
     }
